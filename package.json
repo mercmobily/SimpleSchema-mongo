@@ -1,0 +1,27 @@
+{
+  "name": "simpleschema-mongo",
+  "description": "Mongo component for the simpleschema module",
+  "keywords": [
+    "javascript",
+    "database",
+    "db",
+    "mongodb",
+    "schema",
+    "validation"
+  ],
+  "main": "MongoSchemaMixin.js",
+  "version": "0.3.2",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mercmobily/SimpleSchema.git"
+  },
+  "author": {
+    "name": "Tony Mobily"
+  },
+  "dependencies": {
+    "simpledeclare": "0.3.x",
+    "simpleschema": "0.3.x",
+    "mongowrapper": "0.3.x"
+  }
+}
