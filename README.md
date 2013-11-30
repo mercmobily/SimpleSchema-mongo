@@ -32,17 +32,19 @@ Here is a practical example on how to use MongoSchemaMixin
     MyMongoSchema = declare( [ Schema, MongoSchemaMixin ] );
 
     person = new MyMongoSchema({
-      personId: { type: 'id',     required: true },
-      name:     { type: 'string', required: true },
+      personId:  { type: 'id',     required: true },
+      anotherId: { type: 'id',    required: true },
+      name:      { type: 'string', required: true },
     });
 
-    var p = { name: 'Tony' } ;
+    var p = { name: 'Tony', anotherId: '529955ecd03de35b0f999991' } ;
     MyMongoSchema.makeId( p, function( err, id ){
       if( err ){
         console.log("Error making the id:");
         console.log( err );
       } else {
         p.personId = id;
+        console.log( "MADE ID IS: ", id );
         person.validate( p, function( err, newP, errors){
           if( err ){
             console.log("Oh no!");
@@ -56,8 +58,6 @@ Here is a practical example on how to use MongoSchemaMixin
         });
       }
     });
-
-
 
 
 
