@@ -10,15 +10,17 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 var 
   dummy
-
 , declare = require('simpledeclare')
-, mongoWrapper = require('mongowrapper')
-
-, ObjectId = mongoWrapper.ObjectId
-, checkObjectId = mongoWrapper.checkObjectId
-
+, mongo = require('mongodb')
 ;
 
+function ObjectId( id ){
+  return ( id instanceof mongo.ObjectID) ? id : mongo.ObjectID( id );
+}
+
+function checkObjectId( s ){
+  return ( s instanceof mongo.ObjectID ) ? true : new RegExp("^[0-9a-fA-F]{24}$").test(s);
+}
 
 var MongoSchemaMixin = declare( null, {
 
