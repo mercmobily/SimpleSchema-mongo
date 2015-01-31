@@ -22,7 +22,7 @@ function checkObjectId( s ){
   return ( s instanceof mongo.ObjectID ) ? true : new RegExp("^[0-9a-fA-F]{24}$").test(s);
 }
 
-var MongoSchemaMixin = declare( null, {
+var MongoSchemaMixin = declare( Object, {
 
   // Cast an ID for this particular engine. If the object is in invalid format, it won't
   // get cast, and as a result check will fail
