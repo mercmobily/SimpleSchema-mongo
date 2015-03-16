@@ -22,6 +22,6 @@
   "dependencies": {
     "simpledeclare": "0.3.x",
     "simpleschema": "0.3.x",
-    "mongodb": "2.x"
+    "mongodb": "~1.4.34"
   }
 }
