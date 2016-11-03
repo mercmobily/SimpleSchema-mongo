@@ -50,7 +50,11 @@ var MongoSchemaMixin = declare( Object, {
 
 // The default id maker
 MongoSchemaMixin.makeId = function( object, cb ){
-  cb( null, ObjectId() );
+  if( typeof( object ) === 'string' ){
+    cb( null, ObjectId( object ) );
+  } else {
+    cb( null, ObjectId() );
+  }
 },
 
 MongoSchemaMixin.vendor = {
